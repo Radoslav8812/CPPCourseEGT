@@ -24,29 +24,53 @@ int main(int argc, const char * argv[]) {
     
     int arr[rows][cols];
     
+    //fill array with values
     for (int i = 0; i < rows; i++){
         for (int j = 0; j < cols; j++){
             cin >> arr[i][j];
         }
     }
     
-    vector<int>vect;
-    
     int v;
     cout << "enter value of V: " << endl;
     cin >> v;
     
+    
+    // VECTOR EXAMPLE:
+    //vector<int>vect;
+    //for (int i = 0; i < rows; i++){
+    //    for (int j = 0; j < cols; j++){
+    //        if (arr[i][j] < v){
+    //            vect.push_back(arr[i][j]);
+    //        }
+    //    }
+    //}
+    
+    //for (int i = 0; i < vect.size(); i++){
+    //    cout << vect[i] << " ";
+    //}
+    
+    
+    // ARRAY EXAMPLE:
+    const int MAX_SIZE = rows * cols;
+    int resultArr[MAX_SIZE];
+    int iter = 0;
+    
+    //If find elements that are less than v, add them to our result array
     for (int i = 0; i < rows; i++){
         for (int j = 0; j < cols; j++){
             if (arr[i][j] < v){
-                vect.push_back(arr[i][j]);
+                resultArr[iter++] = arr[i][j];
             }
         }
     }
     
-    for (int i = 0; i < vect.size(); i++){
-        cout << vect[i] << " ";
+    //printing result array
+    cout << "Elements less than v are: ";
+    for (int i = 0; i < iter; ++i) {
+        cout << resultArr[i] << " ";
     }
+    cout << endl;
     
     return 0;
 }
