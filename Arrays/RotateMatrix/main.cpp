@@ -28,8 +28,14 @@ int main(int argc, const char * argv[]) {
             resultMatrix[i][j] = matrix[n-j-1][i];
         }
     }
-    
-    cout << "Printing rotated matrix:" << endl;
+    // rotate to -90 degrees
+    //for (int i = 0; i < n; i++){
+    //    for (int j = 0; j < n; j++){
+    //        resultMatrix[i][j] = matrix[j][n-i-1];
+    //    }
+    //}
+    //
+    cout << "printing rotated matrix:" << endl;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             cout << resultMatrix[i][j] << " ";
