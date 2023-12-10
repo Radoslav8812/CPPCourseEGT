@@ -50,7 +50,7 @@ int main(int argc, const char * argv[]) {
         cout << "sum: " << rowSum << endl;
         sumEvenRows += rowSum;
     }
-    cout << "Sum of elements in rows with even indices: " << sumEvenRows << endl;
+    cout << "Sum of row elements with even indexes: " << sumEvenRows << endl;
 
     return 0;
 }
