@@ -25,9 +25,9 @@ void VowelsCountPrint(string input){
     
     for (const auto& c : input){
         
-        char currentSybol = tolower(c);
+        char currentSymbol = tolower(c);
         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
-            vowelsMap[currentSybol]++;
+            vowelsMap[currentSymbol]++;
         }
     }
     
