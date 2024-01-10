@@ -1,4 +1,6 @@
 #include "Bike.h"
+#include "Chain.h"
+#include "Tyres.h"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -7,8 +9,6 @@ Bike::Bike(string color, int price, Chain& Ch, Tyres& Ty) : Ch(Ch), Ty(Ty)
 {
     this -> color = color;
     this ->  price = price;
-    this -> Ch = Ch;
-    this -> Ty = Ty;
 }
 ///
 void Bike:: setColor(string color)
@@ -50,7 +50,7 @@ Tyres& Bike:: getTyres()
 
 void Bike:: showInfo()
 {
-    cout << getColor() <<" "<<getPrice()<<" "<<endl;
+    cout << getColor() << " " <<getPrice() << " " << endl;
     Ch.showInfo();
     Ty.showInfo();
 }

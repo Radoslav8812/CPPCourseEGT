@@ -14,18 +14,17 @@
 #include <string>
 using namespace std;
 
-public class Bike
-{
+class Bike {
     
 private:
     string color;
     int price;
-    Chain Ch;
-    Tyres Ty;
-};
+    Chain& Ch;
+    Tyres& Ty;
 
 public:
-    Bike(string, int, Chain&, Tyres&);///priema adres Ch ,Ty;
+    
+    Bike(string, int, Chain&, Tyres&);
 
     void setColor(string);
     string getColor();
@@ -40,5 +39,7 @@ public:
     Tyres& getTyres();
 
     void showInfo();
+    
+};
 
 #endif /* Bike_h */

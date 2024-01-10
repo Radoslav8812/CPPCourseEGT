@@ -12,7 +12,7 @@
 
 using namespace std;
 
-Chain::Chain(int Dents,int Lengh)
+Chain::Chain(int Dents, int Lengh)
 {
     this -> dents = Dents;
     this -> lengh = Lengh;
