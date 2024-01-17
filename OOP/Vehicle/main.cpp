@@ -27,11 +27,12 @@ int main(int argc, const char * argv[]) {
         v -> print();
         cout << "Price: " << v -> calculatePrice() << endl;
         v -> printParts();
+        v -> Specific();
         cout << endl;
     }
     
     for (auto& v : vehicleVect) {
-        delete v;
+        delete& v;
     }
     
     return 0;

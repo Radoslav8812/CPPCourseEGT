@@ -23,3 +23,10 @@ double MotorCycle:: calculatePrice(){
     cout<< "MotorCycle price -> ";
     return horsePower * weight;
 }
+
+void MotorCycle:: Specific(){
+    cout << "MotorCycle has a rear wheel drive and 6 gears. " << endl;
+}
+MotorCycle::~MotorCycle(){
+    
+}

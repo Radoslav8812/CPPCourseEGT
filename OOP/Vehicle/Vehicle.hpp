@@ -24,9 +24,11 @@ protected:
     
 public:
     Vehicle(string brand, string model, int horsePower, int weight, vector<string> parts);
+    ~Vehicle();
     
     virtual void print();
     virtual double calculatePrice();
     void printParts();
+    virtual void Specific() = 0;
 };
 #endif /* Vehicle_hpp */

@@ -20,9 +20,11 @@ class Car : public Vehicle{
     
 public:
     Car (string brand, string model, int horsePower, int weight, vector<string> parts);
+    ~Car();
     
     void print() override;
     double calculatePrice() override;
+    void Specific() override;
 };
 
 #endif /* Car_hpp */

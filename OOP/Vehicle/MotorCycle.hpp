@@ -19,8 +19,10 @@ class MotorCycle : public Vehicle{
     
 public:
     MotorCycle(string brand, string model, int horsePower, int weight, vector<string> parts);
+    ~MotorCycle();
     
     void print() override;
     double calculatePrice() override;
+    void Specific() override;
 };
 #endif /* MotorCycle_hpp */

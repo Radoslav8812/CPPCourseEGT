@@ -23,3 +23,11 @@ double Car:: calculatePrice(){
     cout << "Price of Vehicle -> ";
     return horsePower * weight;
 }
+
+void Car:: Specific(){
+    cout << "Car has 6 gears and 4x4 drive." << endl;
+}
+
+Car::~Car() {
+    
+}

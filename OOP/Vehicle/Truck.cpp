@@ -21,3 +21,11 @@ void Truck::print() {
 double Truck:: calculatePrice(){
     return horsePower * weight;
 }
+
+void Truck:: Specific(){
+    cout << "Truck has 6x6 drive and 16 gears." << endl;
+}
+
+Truck:: ~Truck(){
+    
+}

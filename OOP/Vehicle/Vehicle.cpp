@@ -24,3 +24,7 @@ void Vehicle:: printParts(){
     }
     cout << endl;
 }
+
+Vehicle::~Vehicle() {
+    
+}
