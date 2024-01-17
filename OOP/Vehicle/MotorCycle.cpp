@@ -21,7 +21,7 @@ void MotorCycle:: print(){
 
 double MotorCycle:: calculatePrice(){
     cout<< "MotorCycle price -> ";
-    return horsePower * weight;
+    return horsePower * weight * 0.1;
 }
 
 void MotorCycle:: Specific(){

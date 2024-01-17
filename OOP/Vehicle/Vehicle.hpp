@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Vehicle{
@@ -29,6 +30,6 @@ public:
     virtual void print();
     virtual double calculatePrice();
     void printParts();
-    virtual void Specific() = 0;
+    virtual void Specific();
 };
 #endif /* Vehicle_hpp */

@@ -21,7 +21,7 @@ void Car:: print(){
 
 double Car:: calculatePrice(){
     cout << "Price of Vehicle -> ";
-    return horsePower * weight;
+    return horsePower * weight * 0.2;
 }
 
 void Car:: Specific(){

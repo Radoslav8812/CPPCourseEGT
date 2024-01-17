@@ -14,17 +14,24 @@ Vehicle:: Vehicle(string brand, string model, int horsePower, int weight, vector
 }
 
 void Vehicle:: print(){
-    cout << "Brand: " << brand << ", Model: " << model << ", Horsepower: " << horsePower << ", Weight: " << weight;
+    cout << "Brand: " << brand << ", Model: " << model << ", Horsepower: " << horsePower << ", Weight: " << weight << " ";
 }
 
 void Vehicle:: printParts(){
     cout << "Parts -> ";
     for (auto& part: parts){
-        cout << part << ", " << endl;
+        cout << part << ", ";
     }
     cout << endl;
 }
 
+void Vehicle:: Specific(){
+    
+}
+
+double Vehicle:: calculatePrice(){
+    return  horsePower * weight;;
+}
 Vehicle::~Vehicle() {
     
 }

@@ -19,7 +19,7 @@ void Truck::print() {
 }
 
 double Truck:: calculatePrice(){
-    return horsePower * weight;
+    return horsePower * weight * 0.05;
 }
 
 void Truck:: Specific(){
