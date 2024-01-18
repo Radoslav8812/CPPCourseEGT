@@ -25,7 +25,7 @@ double Car:: calculatePrice(){
 }
 
 void Car:: Specific(){
-    cout << "Car has 6 gears and 4x4 drive." << endl;
+    cout << "Car has 6 gears and probably 4x4 drive." << endl;
 }
 
 Car::~Car() {
