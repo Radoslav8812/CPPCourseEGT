@@ -21,7 +21,7 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     // insert code here...
     
-    FitnessCenter fitnessCenter("Flais", "Sofia-city");
+    FitnessCenter fitnessCenter("FLAIS", "Sofia");
     
     int choice;
     
@@ -32,7 +32,7 @@ int main(int argc, const char * argv[]) {
         
         fitnessCenter.userChoice(choice);
         
-    } while (choice != static_cast<int>(EXIT));
+    } while (choice != EXIT);
     
     return 0;
 }

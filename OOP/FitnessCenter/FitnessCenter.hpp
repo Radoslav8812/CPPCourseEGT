@@ -21,10 +21,10 @@ using namespace std;
 
 enum EnumOptions{
     ADD_CUSTOMER = 1,
-    ADD_EQUIPMENT,
-    ADD_TRAINER,
-    DISPLAY_INFO,
-    EXIT
+    ADD_EQUIPMENT = 2,
+    ADD_TRAINER = 3,
+    DISPLAY_INFO = 4,
+    EXIT = 5
 };
 
 class FitnessCenter{

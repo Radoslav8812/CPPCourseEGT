@@ -52,7 +52,7 @@ void FitnessCenter:: displayMenu() {
 // user choice
 void FitnessCenter:: userChoice(int choice){
     
-    if (choice == static_cast<int>(ADD_CUSTOMER)){
+    if (choice == ADD_CUSTOMER){
         
         string name;
         cout << "Enter customer name: ";
@@ -70,7 +70,7 @@ void FitnessCenter:: userChoice(int choice){
             cerr << "Invalid Gender! " << endl;
         }
         
-    } else if (choice == static_cast<int>(ADD_EQUIPMENT)){
+    } else if (choice == ADD_EQUIPMENT){
         
         string equipmentName;
         cout << "Enter the name of equipment: ";
@@ -78,7 +78,7 @@ void FitnessCenter:: userChoice(int choice){
         
         equipmentVect.push_back(new Equipment(equipmentName));
         
-    } else if (choice == static_cast<int>(ADD_TRAINER)){
+    } else if (choice == ADD_TRAINER){
         
         string trainerName;
         cout << "Enter trainer name: ";
@@ -86,7 +86,7 @@ void FitnessCenter:: userChoice(int choice){
         
         trainerVect.push_back(new Trainer(trainerName));
         
-    } else if (choice == static_cast<int>(DISPLAY_INFO)){
+    } else if (choice == DISPLAY_INFO){
         
         cout << " FitnessCenter Info: " << endl;
         cout << "Name -> " << this -> name << endl;
