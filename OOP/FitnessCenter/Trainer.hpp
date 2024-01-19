@@ -18,9 +18,9 @@ using namespace std;
 
 class Trainer {
     
-private:
+protected:
     string name;
-    vector<Customer*> customers;
+    vector<Customer*> customerOfTrainer;
     
 public:
     Trainer(string name);

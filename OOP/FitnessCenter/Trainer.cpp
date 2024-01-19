@@ -15,23 +15,26 @@ Trainer:: Trainer (string name) : name(name){
 }
 
 void Trainer:: addCustomer(Customer* customer){
-    customers.push_back(customer);
+    customerOfTrainer.push_back(customer);
 }
 
 void Trainer:: showCustomer(){
     cout << "Customers of trainer " << this -> name << endl;
-    for (auto& c : customers){
+    for (auto& c : customerOfTrainer){
         c -> showInfo();
     }
 }
 
 void Trainer:: showInfo(){
     cout << "Trainer -> " << this -> name << endl;
+    customerOfTrainer.at(0) -> showInfo();
+    
+    
 }
 
 Trainer:: ~Trainer() {
 
-    for (auto& c : customers) {
+    for (auto& c : customerOfTrainer) {
         delete c;
     }
 }

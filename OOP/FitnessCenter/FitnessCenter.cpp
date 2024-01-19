@@ -63,12 +63,20 @@ void FitnessCenter:: userChoice(int choice){
         cin >> gender;
         
         if (gender == 'M' || gender == 'm'){
-            customerVect.push_back(new MaleCustomer(name));
+            
+            MaleCustomer* currentMale = new MaleCustomer(name);
+            customerVect.push_back(currentMale);
+            
         } else if (gender == 'F' || gender == 'f'){
-            customerVect.push_back(new FemaleCustomer(name));
+            
+            FemaleCustomer* currentFemale = new FemaleCustomer(name);
+            customerVect.push_back(currentFemale);
+            
         } else {
             cerr << "Invalid Gender! " << endl;
         }
+        
+        
         
     } else if (choice == ADD_EQUIPMENT){
         
@@ -85,6 +93,21 @@ void FitnessCenter:: userChoice(int choice){
         cin >> trainerName;
         
         trainerVect.push_back(new Trainer(trainerName));
+        
+        
+        
+        for (auto& t : trainerVect){
+            
+            if (customerVect.size() > 0){
+                
+                for (auto& cust : customerVect){
+                    t -> addCustomer(cust);
+                    
+                }
+            }
+        }
+        
+        customerVect.clear();
         
     } else if (choice == DISPLAY_INFO){
         
@@ -108,7 +131,7 @@ void FitnessCenter:: userChoice(int choice){
             trainer -> showCustomer();
         }
         
-    } else if (choice == static_cast<int>(EXIT)){
+    } else if (choice == EXIT){
         cout << "Exit the program! " << endl;
         
     } else {
