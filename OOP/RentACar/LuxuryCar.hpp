@@ -23,7 +23,7 @@ class LuxuryCar : public Car{
 public:
     double usageCost;
     double distancePassed;
-    string luxuryPercentage;
+    string luxuryAddition;
     static map<string, double> luxuryTypeMap;
     
 public:

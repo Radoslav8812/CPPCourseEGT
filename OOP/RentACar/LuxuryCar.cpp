@@ -11,7 +11,7 @@
 
 using namespace std;
 
-LuxuryCar:: LuxuryCar (string brand, string model, string type, string color, string chasieNumber, string carNumber, double fuelConsumption, double usageCost, double distancePassed, string luxuryPercentage) : Car(brand, model, type, color, chasieNumber, carNumber, fuelConsumption), usageCost(usageCost), distancePassed(distancePassed), luxuryPercentage(luxuryPercentage) {
+LuxuryCar:: LuxuryCar (string brand, string model, string type, string color, string chasieNumber, string carNumber, double fuelConsumption, double usageCost, double distancePassed, string luxuryAddition) : Car(brand, model, type, color, chasieNumber, carNumber, fuelConsumption), usageCost(usageCost), distancePassed(distancePassed), luxuryAddition(luxuryAddition) {
     
    
     //this -> usageCost = usageCost;
@@ -58,12 +58,12 @@ double LuxuryCar::rentCost() {
         distancePercentage = (usageCost * distancePassed) * 0.4;
     }
 
-    auto it = luxuryTypeMap.find(luxuryPercentage);
+    auto it = luxuryTypeMap.find(luxuryAddition);
     
     if (it != luxuryTypeMap.end()) {
         return distancePercentage + it -> second;
     } else {
-        cerr << "Invalid luxury type: " << this -> luxuryPercentage << endl;
+        cerr << "Invalid luxury type: " << this -> luxuryAddition << endl;
         return 0;
     }
 }
