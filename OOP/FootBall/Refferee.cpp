@@ -11,8 +11,8 @@
 
 Refferee :: Refferee (string userName, string passWord) {
     
-    this -> userName = userName;
-    this -> passWord = passWord;
+    setUserName(userName);
+    setPassWord(passWord);
     
     
 }

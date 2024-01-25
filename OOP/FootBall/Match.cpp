@@ -12,12 +12,12 @@ using namespace std;
 
 Match:: Match(int round, string date, string time, string stadium, string city, Team guestTeam, Team homeTeam, Refferee refferee, int matchID) : guestTeam(guestTeam), homeTeam(homeTeam) ,refferee(refferee)  {
     
-    this -> round = round;
-    this -> date = date;
-    this -> time = time;
-    this -> stadium = stadium;
-    this -> city = city;
-    this -> matchID = matchID;
+    setRound(round);
+    setDate(date);
+    setTime(time);
+    setStadium(stadium);
+    setCity(city);
+    setMatchID(matchID);
     
 }
 

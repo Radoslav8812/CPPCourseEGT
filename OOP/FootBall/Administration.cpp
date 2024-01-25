@@ -30,7 +30,7 @@ void Administration:: addTeam(Team team){
         teamsVect.push_back(team);
         cout << "Added Team : " << team.getName() << endl;
     }
-    else{
+    else {
         cout << "Team already exist!" << endl;
     }
 }
@@ -68,18 +68,19 @@ void Administration:: createMatchSchedule(vector<Match> matchesVect){
     
     
   
-  //(string name, string address, string city, string coach, vector<string> playersVect, int playedGames, int wins, int losses, int draws, int point, int leaderBoard, string image)
+    //(string name, string address, string city, string coach, vector<string> playersVect, int playedGames, int wins, int losses, int draws, int point, int leaderBoard, string image)
     Team team1("Team Levski", "Sofia city", "Sofia", "Stoichkov" , {"Player1", "Player2", "Player3"}, 2, 1, 1, 0, 10, 3, "image1");
     Team team2("Team Lokomotiv", "Sofia city", "Sofia", "Gonzo" , {"Player11", "Player22", "Player33"}, 2, 1, 1, 0, 10, 3, "image12");
 
     Refferee referee1("Referee1", "###");
     Refferee referee2("Referee2", "#####");
 
+    
     //int round, string date, string time, string stadium, string city, Team guestTeam, Team homeTeam, Refferee refferee, int matchID)   Match match1( 1, "2024-02-01", "18:00", "Stadium ", "Sofia", team1, team2, 10 );
     
     Match match1( 1, "2024-02-02", "14:00", "Stadium 2", "Plovdiv", team2, team1, referee2, 2);
     Match match2( 1, "2024-02-01", "18:00", "Stadium 1", "Sofia", team1, team2, referee1, 1);
-    // Add matches to the vector
+    
     matchesVect.push_back(match1);
     matchesVect.push_back(match2);
 
@@ -109,7 +110,7 @@ void Administration:: showStatistics(){
         cout << endl;
     }
 
-    // Display match statistics (e.g., cards)
+    
     cout << " Match Statistics: " << endl;
     
     for ( auto& m : matchesVect) {

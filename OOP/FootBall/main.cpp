@@ -42,27 +42,27 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     
     //
-    Team team1("Team1", "Address1", "City1", "Coach1", {"Player1", "Player2"}, 10, 5, 3, 2, 17, 1, "team1.pic");
-    Team team2("Team2", "Address2", "City2", "Coach2", {"Player3", "Player4"}, 9, 4, 2, 3, 14, 2, "team2.pic");
+    Team team1("Levski", "SF", "Sofia City", "Gonzo", {"p1", "p2",}, 10, 5, 3, 2, 17, 1, "empty.pic");
+    Team team2("CSKA", "SF", "Sofia City", "Stoichkov", {"p3", "p4"}, 9, 4, 2, 3, 14, 2, "empty.pic");
     
-    Refferee referee("Referee1", "RefereePass");
+    Refferee refferee("Referee1", "RefereePass");
     
     vector<Match> matches;
 
-    matches.push_back(Match (1, "2024-01-25", "18:00", "Stadium1", "Sofia", team1, team2, referee, 15));
-    matches.push_back(Match (2, "2024-02-02", "14:00", "Stadium2", "Plovdiv", team2, team1, referee, 12));
+    matches.push_back(Match (1, "2024-01-25", "18:00", "Stadium1", "Sofia", team1, team2, refferee, 1));
+    matches.push_back(Match (2, "2024-02-02", "14:00", "Stadium2", "Sofia", team2, team1, refferee, 2));
     
     vector<Team> teams;
     teams.push_back(team1);
     teams.push_back(team2);
 
-    Administration admin("Admin1", "AdminPass");
+    Administration admin("Admin", "#######");
     admin.addTeam(team1);
     admin.addTeam(team1);
     admin.addTeam(team2);
     admin.createMatchSchedule(matches);
 
-    Fans fan("Fan1", "FanPass");
+    Fans fan("Rado", "#######");
     fan.viewMatchSchedule(matches);
     fan.buyTicket(matches[1]);
     fan.buyTicket(matches[0]);
