@@ -22,12 +22,24 @@ string User:: getUserName(){
 }
 
 void User:: setPassWord(string passWord){
+    
+    if (passWord.length() > 4 && passWord.length() < 20){
+        this -> passWord = passWord;
+    }
+    else{
+        while (!(passWord.length() > 4 && passWord.length() < 20)) {
+            cout << "Invalid PassWord" << endl;
+            cin >> passWord;
+        }
+    }
+    
     this -> passWord = passWord;
+    
 }
 string User:: getPassWord(){
     return this -> passWord;
 }
 
-bool User:: passAuthentication(string enteredPassword){
-    return this -> passWord == enteredPassword;
-}
+//bool User:: passAuthentication(string enteredPassword){
+//    return this -> passWord == enteredPassword;
+//}

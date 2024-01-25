@@ -30,7 +30,7 @@ public:
     void setPassWord(string);
     string getPassWord();
     
-    bool passAuthentication(string enteredPassword);
+    //bool passAuthentication(string enteredPassword);
 };
 
 #endif /* User_hpp */
