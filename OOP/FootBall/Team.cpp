@@ -9,7 +9,18 @@
 
 Team:: Team(string name, string address, string city, string coach, vector<string> playersVect, int playedGames, int wins, int losses, int draws, int point, int leaderBoard, string image) {
     
-    
+    setName(name);
+    setAddress(address);
+    setCity(city);
+    setCoach(coach);
+    setPlayers(playersVect);
+    setPlayedGames(playedGames);
+    setWins(wins);
+    setLosses(losses);
+    setDraws(draws);
+    setPoints(point);
+    setLeaderBoard(leaderBoard);
+    setImage(image);
 }
 
 void Team:: setName(string name){
@@ -83,7 +94,7 @@ int Team:: getPoints(){
     return this -> points;
 }
 
-void Team:: getLeaderBoard(int leaderBoard){
+void Team:: setLeaderBoard(int leaderBoard){
     this -> leaderBoard = leaderBoard;
 }
 int Team:: getLeaderBoard (){
@@ -119,11 +130,11 @@ int Team:: calculateAvgSpectatorsPerMatch(){
     int totalSpectators = 0;
     
     if (spectatorsPMVect.empty()){
-        return  0;
+        return 0;
     }
     
-    for (auto& spectators : spectatorsPMVect){
-        totalSpectators += spectators;
+    for (auto& s : spectatorsPMVect){
+        totalSpectators += s;
     }
     
     return totalSpectators / spectatorsPMVect.size();

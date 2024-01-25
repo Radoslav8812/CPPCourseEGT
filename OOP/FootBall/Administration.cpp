@@ -18,8 +18,8 @@ void Administration:: addTeam(Team team){
     
     bool isExist = false;
     
-    for (auto& existTeam : teamsVect) {
-        if (existTeam.getName() == team.getName()) {
+    for (auto& t : teamsVect) {
+        if (t.getName() == team.getName()) {
             
             isExist = true;
             break;
@@ -51,7 +51,7 @@ void Administration:: editTeam(Team team){
 }
 
 void Administration:: removeTeam(Team team){
-    
+    //erase must try
     auto it = remove_if(teamsVect.begin(), teamsVect.end(), [&team](Team existingTeam) {
         return existingTeam.getName() == team.getName();
     });
@@ -91,20 +91,20 @@ void Administration:: showStatistics(){
     
     cout << "Team Rankings: " << endl;
     
-    for (auto& team : teamsVect) {
-        cout << team.getName() << ": " << team.getPoints() << endl;
+    for (auto& t : teamsVect) {
+        cout << t.getName() << ": " << t.getPoints() << endl;
     }
     
     cout << endl;
     // Display wins, losses, and spectators per team
     cout << " Team Statistics: " << endl;
     
-    for (auto& team : teamsVect) {
+    for (auto& t : teamsVect) {
         
-        cout << "Team: " <<  team.getName()<< endl;
-        cout << "Wins: " << team.getWins() << endl;
-        cout << "Losses: " << team.getLosses() << endl;
-        cout << "Spectators per match: " << team.calculateAvgSpectatorsPerMatch() << endl;
+        cout << "Team: " <<  t.getName()<< endl;
+        cout << "Wins: " << t.getWins() << endl;
+        cout << "Losses: " << t.getLosses() << endl;
+        cout << "Spectators per match: " << t.calculateAvgSpectatorsPerMatch() << endl;
         
         cout << endl;
     }
@@ -112,10 +112,10 @@ void Administration:: showStatistics(){
     // Display match statistics (e.g., cards)
     cout << " Match Statistics: " << endl;
     
-    for ( auto& match : matchesVect) {
+    for ( auto& m : matchesVect) {
         
-        cout << "Red Cards: " << match.calculateTotalRedCards() << endl;
-        cout << "Yellow Cards: " << match.calculateTotalYellowCards() << endl;
+        cout << "Red Cards: " << m.calculateTotalRedCards() << endl;
+        cout << "Yellow Cards: " << m.calculateTotalYellowCards() << endl;
         
         cout << endl;
     }

@@ -52,7 +52,7 @@ void Refferee:: redCards(string player){
 
 void Refferee:: addGoals(string realiser, string goalTime){
     goalRealisersVect.push_back(realiser);
-    this -> goalTime = goalTime;
+    this -> goalTime = goalTime; // !!!!
 }
 
 
@@ -74,8 +74,8 @@ string Refferee:: MatchShowInfo(){
     
     cout << endl;
     
-    for (auto& realiser : goalRealisersVect){
-        info += realiser + " (" + goalTime + "), ";
+    for (auto& r : goalRealisersVect){
+        info += r + " (" + goalTime + "), ";
     }
     return  info;
 }

@@ -65,7 +65,7 @@ public:
     void setPoints(int);
     int getPoints();
     
-    void getLeaderBoard(int);
+    void setLeaderBoard(int);
     int getLeaderBoard();
     
     void setImage(string);

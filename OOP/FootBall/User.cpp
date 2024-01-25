@@ -10,8 +10,8 @@
 
 User:: User (string userName, string passWord){
     
-    this -> userName = userName;
-    this -> passWord = passWord;
+    setUserName(userName);
+    setPassWord(passWord);
 }
 
 void User:: setUserName(string userName){
@@ -40,6 +40,4 @@ string User:: getPassWord(){
     return this -> passWord;
 }
 
-//bool User:: passAuthentication(string enteredPassword){
-//    return this -> passWord == enteredPassword;
-//}
+
