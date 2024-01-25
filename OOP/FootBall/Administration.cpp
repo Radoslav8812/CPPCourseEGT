@@ -75,12 +75,13 @@ void Administration:: createMatchSchedule(vector<Match> matchesVect){
     Refferee referee1("Referee1", "###");
     Refferee referee2("Referee2", "#####");
 
-    //int round, string date, string time, string stadium, string city, Team guestTeam, Team homeTeam, Refferee refferee) : guestTeam(guestTeam), homeTeam(homeTeam) ,refferee(refferee)
-   // Match match1( 1, "2024-02-01", "18:00", "Stadium ", "Sofia", team1, team2, referee1, team2, team1, referee1);
-     //Match match2( 1, "2024-02-01", "18:00", "Stadium ", "Sofia", team1, team2, referee1, team2, team1, referee1);
+    //int round, string date, string time, string stadium, string city, Team guestTeam, Team homeTeam, Refferee refferee, int matchID)   Match match1( 1, "2024-02-01", "18:00", "Stadium ", "Sofia", team1, team2, 10 );
+    
+    Match match1( 1, "2024-02-02", "14:00", "Stadium 2", "Plovdiv", team2, team1, referee2, 2);
+    Match match2( 1, "2024-02-01", "18:00", "Stadium 1", "Sofia", team1, team2, referee1, 1);
     // Add matches to the vector
-   // matchesVect.push_back(match1);
-   // matchesVect.push_back(match2);
+    matchesVect.push_back(match1);
+    matchesVect.push_back(match2);
 
     cout << "Match schedule created" << endl;
 }
