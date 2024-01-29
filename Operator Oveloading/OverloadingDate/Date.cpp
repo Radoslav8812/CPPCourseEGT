@@ -90,7 +90,6 @@ ostream operator<<(ostream output, Date date) {
     return output;
 }
 
-// Предефиниране на оператор >>
 istream operator>>(istream input, Date date) {
     
     char dash;
