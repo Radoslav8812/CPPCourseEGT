@@ -81,6 +81,8 @@ Date Date:: operator--(int){
     return currDate;
 }
 
+
+// MUST BE FIXED
 ostream operator<<(ostream output, Date date) {
 
     output << setfill('0') << setw(2) << date.getDay() << '-';
