@@ -18,15 +18,14 @@ int main(int argc, const char * argv[]) {
     
     
     Pinguin pinguin ("Happy Feet", "Antarctica", "Fish", 1, 1);
-    
-    pinguin.Print();
 
-    pinguin.Eat();
     pinguin.Print();
+    pinguin.Eat();
     pinguin.Swim();
     pinguin.Run();
     pinguin.Fly();
     pinguin.Sound();
+    pinguin.Sleep();
 
     if (pinguin.IsHungry()) {
         
