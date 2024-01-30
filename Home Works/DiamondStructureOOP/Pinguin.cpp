@@ -36,7 +36,7 @@ void Pinguin:: Sleep(){
 }
 
 void Pinguin:: Sound(){
-    cout << " # " << endl;
+    cout << "pinguin singing " << endl;
 }
 
 bool Pinguin:: IsHungry(){
@@ -48,9 +48,7 @@ bool Pinguin:: IsHungry(){
 
 void Pinguin:: Print(){
     
-    cout << "Mammal Info: ";
     Mammal:: Print();
     cout << endl;
-    cout << "Bird info: ";
     Bird :: Print();
 }
