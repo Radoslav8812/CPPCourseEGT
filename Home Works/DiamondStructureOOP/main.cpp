@@ -17,7 +17,7 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     
     
-    Pinguin pinguin ("Happy Feet", "Antarctica", "Fish", 1, 1);
+    Pinguin pinguin ("Pingy", "Antarctica", "Fish", 1, 1);
 
     pinguin.Print();
     pinguin.Eat();
