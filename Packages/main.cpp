@@ -38,7 +38,6 @@ int main(int argc, const char * argv[]) {
     
     vector<Package*> packagesVect;
     
-    //(string senderName, string senderAddress, string receiverName, string ReceiverAddress , double weight, double cost, double twoDayTax)
     packagesVect.push_back(new TwoDayPackage("Radoslav", "Sofia - Nadejva 2", "Spiridon", "Pernik - Baikusheva mahala", 12.5, 100, 5));
     packagesVect.push_back(new OvernightPackage("Hasan", "Plovdiv - Old Town", "Rado", "Sofia - Nadejda", 50, 50, 20));
 
@@ -53,15 +52,14 @@ int main(int argc, const char * argv[]) {
         //every single package cost
         double cost = pack -> calculateCost();
         cout << "Shipping Cost: " << cost << endl;
-        
-        
+                
         //total cost
         totalCostShipping += cost;
         
         cout << "########################################################" << endl;
     }
     
-    cout << "Overall cost for whole shipping: " << totalCostShipping << endl;
+    cout << "Overall cost for all shippings: " << totalCostShipping << endl;
     
     return 0;
 }
