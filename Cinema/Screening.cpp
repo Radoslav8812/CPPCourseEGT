@@ -48,5 +48,5 @@ int Screening::getSoldTickets()
 
 void Screening::printInfo()
 {
-    cout << "Movie name: " << getMovieName() << endl << ", Sold Tickets: " << getSoldTickets() << endl;
+    cout << "Movie name: " << getMovieName() << ", Sold Tickets: " << getSoldTickets() << endl;
 }

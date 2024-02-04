@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
     
     Screening sc1("Titanic", 30);
     Screening sc2("Predators", 10);
-    Screening sc4("SAW", 10);
+    Screening sc4("Saw", 10);
     Screening sc3("Silence of the lambs", 10);
     
     vector<Screening> screeningsVect;
@@ -47,6 +47,7 @@ int main(int argc, const char * argv[]) {
     
     Cinema cinema("Paradice-Cinema", "Sofia-Lozenetz", hallsVect);
     cinema.Print();
+    cout << endl;
 
     Screening sc5("Matrix 2", 55);
     h3.addScreening(sc5);
