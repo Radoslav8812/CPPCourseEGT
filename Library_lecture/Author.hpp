@@ -24,7 +24,14 @@ private:
 public:
     Author (string name, string surname, string nationality);
     
-    string getFullName();
+    void setName(string);
+    string getName();
+    
+    void setSurName(string);
+    string getSurname();
+    
+    void setNationality(string);
+    string getNationality();
     
     void showInfo();
 };

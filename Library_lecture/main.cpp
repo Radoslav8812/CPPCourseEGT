@@ -27,9 +27,10 @@ int main(int argc, const char * argv[]) {
     Book book1("Silence of the lambs", author, genre, 1999);
     bookVect.push_back(book1);
         
-    cout << "Enter word to search to: ";
+    cout << "Enter a desire title to search: ";
     string text;
-    getline(cin, text);
+    cin >> text;
+    
     
     for (auto& book : bookVect){
         if (book.nameSearching(text)){

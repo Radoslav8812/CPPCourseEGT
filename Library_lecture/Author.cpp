@@ -10,16 +10,34 @@
 
 using namespace std;
 
-Author:: Author (string name, string surName, string nationality) : name(name), surName(surName), nationality(nationality){
-    this -> name = name;
-    this -> surName = surName;
-    this -> nationality = nationality;
+Author:: Author (string name, string surName, string nationality) {
+   
+    setName(name);
+    setSurName(surName);
+    setNationality(nationality);
 }
 
-string Author:: getFullName()  {
-    return this -> name + " " + this -> surName;
+void Author:: setName(string name){
+    this -> name = name;
+}
+string Author:: getName(){
+    return this -> name;
+}
+
+void Author:: setSurName(string surName){
+    this -> surName = surName;
+}
+string Author:: getSurname(){
+    return this -> surName;
+}
+
+void Author:: setNationality(string nationality){
+    this -> nationality = nationality;
+}
+string Author:: getNationality(){
+    return this -> nationality;
 }
 
 void Author:: showInfo(){
-    cout << " Author name -> "<< getFullName()<< " Author nationality -> " << this -> nationality << endl;
+    cout << "Author name: " << getName() + " " + getSurname() <<"\nAuthor Nationality: " << this -> getNationality() << endl;
 }

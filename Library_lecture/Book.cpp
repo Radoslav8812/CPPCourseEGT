@@ -12,10 +12,12 @@
 #include <string>
 using namespace std;
 
-Book:: Book ( string title, Author& author, Genre& genre, int yearOfRealise) :  author(author), genre(genre) {
+Book:: Book (string title, Author author, Genre genre, int yearOfRealise) :  author(author), genre(genre) {
     
-    this -> title = title;
-    this -> yearOfRelease = yearOfRealise;
+    setTitle(title);
+    setAuthor(author);
+    setGenre(genre);
+    setYearOfRelease(yearOfRealise);
 }
 
 void Book:: setTitle(string title){
@@ -25,17 +27,17 @@ string Book:: getTitle(){
     return this -> title;
 }
 
-void Book:: setAuthor(Author& author) {
+void Book:: setAuthor(Author author) {
     this -> author = author;
 }
-Author& Book:: getAuthor(){
+Author Book:: getAuthor(){
     return this -> author;
 }
 
-void Book:: setGenre(Genre & genre){
+void Book:: setGenre(Genre genre){
     this -> genre = genre;
 }
-Genre& Book:: getGenre(){
+Genre Book:: getGenre(){
     return this -> genre;
 }
 
@@ -46,13 +48,14 @@ int Book:: getYearOfRelease(){
     return  this -> yearOfRelease;
 }
 
-bool Book:: nameSearching(string &searchName){
+bool Book:: nameSearching(string searchName){
     return  title.find(searchName) != string:: npos;
 }
 
 void Book:: showInfo(){
-    cout << "Book title: " << getTitle() << " -> ";
+    cout << "Book title: " << getTitle() << endl;
     author.showInfo();
     genre.showInfo();
-    cout << " Book yearOfRelease: " << yearOfRelease << endl;
+    cout << endl;
+    cout << "Book yearOfRelease: " << yearOfRelease << endl;
 }

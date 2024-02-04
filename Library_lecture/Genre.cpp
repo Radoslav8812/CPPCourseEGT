@@ -12,7 +12,7 @@ using namespace std;
 
 Genre:: Genre( string genreType) {
     
-    this -> genreType = genreType;
+    setGenreType(genreType);
 }
 
 void Genre:: setGenreType(string genreType){
@@ -23,5 +23,5 @@ string Genre:: getGenreType() {
 }
 
 void Genre:: showInfo(){
-    cout << " GenreType: " << getGenreType();
+    cout << "GenreType: " << getGenreType();
 }
