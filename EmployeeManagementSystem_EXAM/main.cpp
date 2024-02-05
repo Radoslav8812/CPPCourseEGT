@@ -21,37 +21,26 @@ int main(int argc, const char * argv[]) {
     Employee* empl4 = new Employee("Petkan", 1, "C++ Team Lead");
     Employee* empl5 = new Employee("Osman", 1, "C++ architect");
     
+    vector<Employee*> EmpVect = {empl1, empl2, empl3, empl4, empl5};
+    
     Department* department = new Department("Software Engineering");
     Department* department1 = new Department("Education");
     
-    department -> addEmployee(empl1);
-    department -> addEmployee(empl2);
-    department -> addEmployee(empl3);
-    department -> addEmployee(empl4);
-    department -> addEmployee(empl5);
-    
-    if (department -> employees.size() > 0){
-        
-        for (auto& empl: department -> employees){
-            empl -> display();
-        }
-    }
-    else{
-        cout << "Empty Department!" << endl;
+
+    for (int i = 0; i < 3; i++){
+        department -> addEmployee(EmpVect[i]);
     }
     
     cout << endl;
-    
-    if (department1 -> employees.size() > 0){
-        
-        for (auto& empl: department1 -> employees){
-            empl -> display();
-        }
-    }
-    else{
-        cout << "Empty Department!" << endl;
+    for (int i = 3; i < EmpVect.size(); i++){
+        department1 -> addEmployee(EmpVect[i]);
     }
     
+    cout << "Software Engineers: " << endl;
+    department -> displayEmployees();
+    
+    cout << "Education: " << endl;
+    department1 -> displayEmployees();
     
     return 0;
 }

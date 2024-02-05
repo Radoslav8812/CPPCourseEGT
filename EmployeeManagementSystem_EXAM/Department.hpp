@@ -23,14 +23,16 @@ private:
     string departmentName;
     int numEmployees;
     
+    vector<Employee*> employeesVect;
+    
 public:
-    Department(string);
-    vector<Employee*> employees;
+    Department(string departmentName);
     
     void setDepartmentName(string);
     string getDepartmentName();
     
     void addEmployee(Employee* employee);
+    
     void displayEmployees();
 };
 #endif /* Department_hpp */

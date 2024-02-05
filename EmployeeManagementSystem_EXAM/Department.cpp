@@ -8,9 +8,10 @@
 #include "Department.hpp"
 
 
-Department:: Department (string departmentName) : departmentName(departmentName){
+Department:: Department (string departmentName) {
     
     setDepartmentName(departmentName);
+    this -> numEmployees = 0;
 }
 
 void Department:: setDepartmentName(string departmentName){
@@ -22,13 +23,14 @@ string Department:: getDepartmentName(){
 
 void Department:: addEmployee(Employee* employee){
 
-    employees.push_back(employee);
-    numEmployees += 1;
+    this -> employeesVect.push_back(employee);
+    this -> numEmployees++;
 }
 
 void Department:: displayEmployees(){
     
-    for (int i = 0; i < numEmployees; i++){
-        employees[i] -> display();
+    for (int i = 0; i < employeesVect.size(); i++){
+        
+        employeesVect[i] -> display();
     }
 }

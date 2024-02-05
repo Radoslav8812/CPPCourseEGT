@@ -24,6 +24,15 @@ private:
 public:
     Employee(string name, int employeeID, string position);
     
+    void setName(string);
+    string getName();
+    
+    void setEmployeeID(int);
+    int getEmployeeID();
+    
+    void setPosition(string);
+    string getPosition();
+    
     void display();
 };
 
