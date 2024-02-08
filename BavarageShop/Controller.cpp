@@ -60,12 +60,6 @@ vector<Order> Controller:: ordersByDrinkType(string drinkType){
     return sortedOrdersVect;
 }
 
-vector<Order> Controller:: topCustomers(double minAmount){
-    
-    vector<Order> emptyVect;
-    return emptyVect;
-}
-
 Controller:: ~Controller(){
     
 }

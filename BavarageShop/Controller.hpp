@@ -32,7 +32,7 @@ public:
     Order getBestCustomer();
     
     vector<Order> ordersByDrinkType(string drinkType);
-    vector<Order> topCustomers(double minAmount);
+    
 };
 
 #endif /* Controller_hpp */
