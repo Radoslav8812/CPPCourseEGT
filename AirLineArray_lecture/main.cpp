@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
     
     while (true) {
         int index;
-        cout << "Enter position (index from 0 to 9): ";
+        cout << "Enter position (index from 0 to 4): ";
         cin >> index;
         
         if (index >= 0 && index < 5){
