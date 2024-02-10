@@ -5,7 +5,7 @@ class SDLInit
 {
 
 private:
-	bool m_SoundInitilized = false;
+	bool mSoundInitilized = false;
 
 public:
 	static void initSDLSound();

@@ -26,7 +26,7 @@ SDLInit::SDLInit()
         exit(-1);
     } 
     else {
-        m_SoundInitilized = true;
+        mSoundInitilized = true;
     }
 }
 
