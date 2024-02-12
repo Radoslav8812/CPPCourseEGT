@@ -10,34 +10,52 @@ using json = nlohmann::json;
 using namespace std;
 
 int main() {
- 
-    string jsonFilePath = "C:/Users/User/Desktop/VS CPP Projects/Employees/Data.Json";
 
-    // Reading JSON
-    ifstream inputFile(jsonFilePath);
+	string jsonFilePath = "C:/Users/User/Desktop/VS CPP Projects/Employees/EmployeesData.Json";
 
-    if (!inputFile.is_open()) {
-        cerr << "Error: Unable to open file !" << jsonFilePath << endl;
-        return 1;
-    }
+	// Reading JSON
+	ifstream inputFile(jsonFilePath);
 
-    // Parse JSON
-    json readEmployeesData;
-    inputFile >> readEmployeesData;
-    inputFile.close();
+	if (!inputFile.is_open()) {
+		cerr << " Unable to open file !" << jsonFilePath << endl;
+		return 1;
+	}
 
-    vector<EmployeeWorkStation> employeeWorkstationsVect;
+	// Parse JSON
+	json readEmployeesData;
+	inputFile >> readEmployeesData;
+	inputFile.close();
 
-    for (auto& employeeData : readEmployeesData["EmployeesData"]["Employees"]) {
+	json newEmployeeData = {
+	   {"Name", "Spiridon Spiridonovich"},
+	   {"Position", "Software Engineer"},
+	   {"Salary", 100000}
+	};
 
-        EmployeeWorkStation employeeWorkstation(employeeData);
-        employeeWorkstationsVect.push_back(employeeWorkstation);
-    }
+	//readEmployeesData["EmployeeData"]["Employees"].push_back(newEmployeeData);
 
-    for (auto& ew : employeeWorkstationsVect) {
-        ew.print();
-        cout << endl;
-    }
+	ofstream outputFile(jsonFilePath);
 
-    return 0;
+	//if (outputFile.is_open()) {
+	//	outputFile << readEmployeesData; 
+	//	outputFile.close();
+
+	//	cout << "New employee added to the Json." << endl;
+	//}
+	//else {
+	//	cerr << "Unable to open file for writing!" << jsonFilePath << endl;
+	//	return 1;
+	//}
+
+	//cout << "JSON content: " << readEmployeesData << endl;
+
+	for (auto& employee : readEmployeesData["EmployeeData"]["Employees"]) {
+
+		for (auto& kvp : employee.items()) {
+			cout << kvp.key() << " Value: " << kvp.value() << endl;
+		}
+		cout << endl; 
+	}
+
+	return 0;
 }

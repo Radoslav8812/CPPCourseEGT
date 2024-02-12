@@ -19,7 +19,7 @@ private:
 	WorkStation workStation;
 
 public:
-	EmployeeWorkStation();
+	EmployeeWorkStation() = default;
 	EmployeeWorkStation(const nlohmann::json& employeeWorkstationData);
 
 	void setName(string);
