@@ -1,3 +1,4 @@
+
 #include "EmployeeWorkstation.h"
 
 //EmployeeWorkStation:: EmployeeWorkStation(string name, string type, string age) {
@@ -6,8 +7,8 @@
 //	setAge(age);
 //}
 
-EmployeeWorkStation::EmployeeWorkStation(const nlohmann::json& employeeWorkstationData) : employee(employeeWorkstationData["Employee"]),
-workStation(employeeWorkstationData["Employee"]["Workstation"])
+EmployeeWorkStation::EmployeeWorkStation(const nlohmann::json& employeeWorkstationData) : employee(employeeWorkstationData["Employee"]), 
+			workStation(employeeWorkstationData["Employee"]["Workstation"])
 {
 	/*setName(name);
 	setType(type);
@@ -38,19 +39,19 @@ string EmployeeWorkStation::getAge() {
 //void EmployeeWorkStation::setWorkStation(WorkStation& workStation) const {
 //	this->workStation = workStation;
 //}
-const WorkStation& EmployeeWorkStation::getWorkStation() const {
+const WorkStation& EmployeeWorkStation::getWorkStation() const  {
 	return this->workStation;
 }
 
 //void EmployeeWorkStation::setEmployee(Employee& employee) const {
 //	this->employee = employee;
 //}
-const Employee& EmployeeWorkStation::getEmployee() const {
+const Employee& EmployeeWorkStation::getEmployee() const{
 	return this->employee;
 }
 
 void EmployeeWorkStation::print() {
-
+	
 	employee.print();
 	workStation.print();
-}
+ }
