@@ -12,26 +12,27 @@ using namespace std;
 int main() {
 
 	string jsonFilePath = "C:/Users/User/Desktop/VS CPP Projects/Employees/EmployeesData.json";
-	// Reading JSON
+	// Reading Json
 	ifstream inputFile(jsonFilePath);
 
+	// Check if the file is successfully opened
 	if (!inputFile.is_open()) {
 		cerr << " Unable to open file !" << jsonFilePath << endl;
 		return 1;
 	}
 
-	// Parse JSON
+	// Parse the JSon data from the file
 	json readEmployeesData;
 	inputFile >> readEmployeesData;
 	inputFile.close();
 
-	//add new json data
+	// Define new Json data to be added
 	json newEmployeeToAdd = {
 	   "Employee", {
 		   {"Age", 28},
 		   {"Name", "Rado"},
 		   {"Type", "Full-Time"},
-		      {"workstationData", {
+		      {"workstationData",{
 		        {"Building", 5},
 		        {"Desc", 5},
 		        {"Floor", 5}
@@ -39,9 +40,11 @@ int main() {
 	   }
 	};
 	//readEmployeesData["Employees"].push_back(newEmployeeToAdd);
-
+	
+	// Open the file for writing
 	ofstream outputFile(jsonFilePath);
 
+	// Check if the file is successfully opened for writing
 	if (outputFile.is_open()) {
 		outputFile << readEmployeesData;
 		outputFile.close();
@@ -51,7 +54,7 @@ int main() {
 		return 1;
 	}
 
-	cout << setw(2) << readEmployeesData << endl;
+	outputFile << setw(2) << readEmployeesData << endl;
 
 	/*for (auto& employee : readEmployeesData["EmployeeData"]["Employees"]) {
 
