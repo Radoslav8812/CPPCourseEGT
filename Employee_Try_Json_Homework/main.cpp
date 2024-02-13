@@ -23,7 +23,22 @@ int main() {
 	// Parse JSON
 	json readEmployeesData;
 	inputFile >> readEmployeesData;
-	//inputFile.close();
+	inputFile.close();
+
+	//add new json data
+	json newEmployeeToAdd = {
+	   "Employee", {
+		   {"Age", 28},
+		   {"Name", "Rado"},
+		   {"Type", "Full-Time"},
+		      {"workstationData", {
+		        {"Building", 5},
+		        {"Desc", 5},
+		        {"Floor", 5}
+			  }}
+	   }
+	};
+	//readEmployeesData["Employees"].push_back(newEmployeeToAdd);
 
 	ofstream outputFile(jsonFilePath);
 
@@ -32,13 +47,13 @@ int main() {
 		outputFile.close();
 	}
 	else {
-		cerr << "Unable to open file for writing!" << jsonFilePath << endl;
+		cerr << "Unable to open file !" << jsonFilePath << endl;
 		return 1;
 	}
 
-	//cout << "JSON content: " << readEmployeesData << endl;
+	cout << setw(2) << readEmployeesData << endl;
 
-	for (auto& employee : readEmployeesData["EmployeeData"]["Employees"]) {
+	/*for (auto& employee : readEmployeesData["EmployeeData"]["Employees"]) {
 
 		for (auto& kvp : employee.items()) {
 
@@ -47,7 +62,7 @@ int main() {
 			cout << " - - - - - - - - - - - " << endl;
 		}
 		cout << endl;
-	}
+	}*/
 
 	return 0;
 }

@@ -1,1 +1,113 @@
-{"EmployeeData":{"Employees":[{"Employee":{"Age":23,"Name":"John","Type":"Part-Time","workstationData":{"Building":2,"Desc":5,"Floor":3}}},{"Employee":{"Age":34,"Name":"Sean","Type":"Full-Time","workstationData":{"Building":2,"Desc":6,"Floor":3}}},{"Employee":{"Age":55,"Name":"Sarah","Type":"Part-Time","workstationData":{"Building":3,"Desc":1,"Floor":1}}}],"FormatVersion":1}}
+{
+  "EmployeeData": {
+    "Employees": [
+      {
+        "Employee": {
+          "Age": 23,
+          "Name": "John",
+          "Type": "Part-Time",
+          "workstationData": {
+            "Building": 2,
+            "Desc": 5,
+            "Floor": 3
+          }
+        }
+      },
+      {
+        "Employee": {
+          "Age": 34,
+          "Name": "Sean",
+          "Type": "Full-Time",
+          "workstationData": {
+            "Building": 2,
+            "Desc": 6,
+            "Floor": 3
+          }
+        }
+      },
+      {
+        "Employee": {
+          "Age": 55,
+          "Name": "Sarah",
+          "Type": "Part-Time",
+          "workstationData": {
+            "Building": 3,
+            "Desc": 1,
+            "Floor": 1
+          }
+        }
+      }
+    ]
+  },
+  "Employees": [
+    [
+      "Employee",
+      {
+        "Age": 28,
+        "Name": "Rado",
+        "Type": "Full-Time",
+        "workstationData": {
+          "Building": 5,
+          "Desc": 5,
+          "Floor": 5
+        }
+      }
+    ]
+  ]
+} {
+  "EmployeeData": {
+    "Employees": [
+      {
+        "Employee": {
+          "Age": 23,
+          "Name": "John",
+          "Type": "Part-Time",
+          "workstationData": {
+            "Building": 2,
+            "Desc": 5,
+            "Floor": 3
+          }
+        }
+      },
+      {
+        "Employee": {
+          "Age": 34,
+          "Name": "Sean",
+          "Type": "Full-Time",
+          "workstationData": {
+            "Building": 2,
+            "Desc": 6,
+            "Floor": 3
+          }
+        }
+      },
+      {
+        "Employee": {
+          "Age": 55,
+          "Name": "Sarah",
+          "Type": "Part-Time",
+          "workstationData": {
+            "Building": 3,
+            "Desc": 1,
+            "Floor": 1
+          }
+        }
+      }
+    ]
+  },
+  "Employees": [
+    [
+      "Employee",
+      {
+        "Age": 28,
+        "Name": "Rado",
+        "Type": "Full-Time",
+        "workstationData": {
+          "Building": 5,
+          "Desc": 5,
+          "Floor": 5
+        }
+      }
+    ]
+  ]
+}

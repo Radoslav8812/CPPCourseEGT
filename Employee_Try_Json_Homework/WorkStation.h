@@ -13,7 +13,7 @@ private:
 	string desc;
 
 public:
-	WorkStation() = default;
+	WorkStation();
 	WorkStation(const nlohmann::json& workstationData);
 
 	void setBuildings(string);

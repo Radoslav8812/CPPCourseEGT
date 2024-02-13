@@ -2,9 +2,6 @@
 
 Employee::Employee(const nlohmann::json& employeeData) : name(employeeData["Name"]), type(employeeData["Type"]), age(to_string(employeeData["Age"])) {
 
-	/*setName(name);
-	setType(type);
-	setAge(age);*/
 }
 
 
