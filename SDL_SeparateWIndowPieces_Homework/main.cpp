@@ -49,7 +49,7 @@ int main(int argc, char* args[]) {
 	int pieceWidth = WINDOW_WIDTH / 2;
 	int pieceHeight = WINDOW_HEIGHT / 2;
 
-	// Initialize image information for each quadrant
+	// image for each quadrant
 	ImageInfo images[4];
 	for (int i = 0; i < 4; ++i) {
 
@@ -100,7 +100,7 @@ int main(int argc, char* args[]) {
 					SDL_RenderClear(renderer);
 
 					// draw images in each quadrant
-					for (int i = 0; i < 4; ++i) {
+					for (int i = 0; i < 4; i++) {
 						drawImage(renderer, images[i], (i % 2) * pieceWidth, (i / 2) * pieceHeight, pieceWidth, pieceHeight);
 					}
 
