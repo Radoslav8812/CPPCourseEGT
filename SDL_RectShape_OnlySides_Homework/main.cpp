@@ -7,7 +7,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
     
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Error on init! %s ", SDL_GetError());
+        cerr << " Error on init! " << endl;
         return -1;
     }
 
@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     if (window == nullptr || renderer == nullptr) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Error window / renderer %s", SDL_GetError());
+        cerr << " Error on window / renderer! " << endl;
         return -1;
     }
 
