@@ -36,7 +36,6 @@ int main(int argc, char* argv[]) {
 
     SDL_RenderPresent(renderer);
 
-    // Main loop
     bool quit = false;
     SDL_Event e;
     while (!quit) {
@@ -47,12 +46,9 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    // Cleanup
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
-
-    return 0;
 
     return 0;
 }
