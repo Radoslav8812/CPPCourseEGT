@@ -12,7 +12,7 @@ private:
 
 public:
 	Circle(string color, string name);
-	~Circle() override;
+	~Circle();
 
 	void setName(string name);
 	string getName();
