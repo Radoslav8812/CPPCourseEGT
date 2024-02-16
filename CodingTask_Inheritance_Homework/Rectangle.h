@@ -11,7 +11,7 @@ private:
 
 public:
 	Rectangle(string color, string name);
-	~Rectangle() override;
+	~Rectangle();
 
 	void setName(string name);
 	string getName();
