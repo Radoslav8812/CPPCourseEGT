@@ -25,6 +25,7 @@ int main() {
 
 			cout << "Circle founded!" << endl;
 			printArea(shape);
+			cout << endl;
 			shape->draw();
 			
 		}
@@ -32,6 +33,7 @@ int main() {
 
 			cout << "Rectangle founded!" << endl;
 			printArea(shape);
+			cout << endl;
 			shape->draw();
 			
 		}
