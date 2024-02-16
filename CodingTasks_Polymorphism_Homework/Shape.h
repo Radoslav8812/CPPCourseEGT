@@ -16,5 +16,4 @@ public:
 
 	virtual double area();
 	virtual void draw();
-	virtual void printArea();
 };

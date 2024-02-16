@@ -1,9 +1,7 @@
-
 #include "Circle.h"
 
 Circle::Circle(string color, double radius) : Shape(color), radius(radius) {
 
-	
 }
 
 void Circle::draw() {
@@ -16,12 +14,6 @@ double Circle::area() {
 	return 3.14 * radius * radius;
 }
 
-void Circle::printArea() {
-
-	Shape::printArea();
-	cout << this->area();
-}
-
-Circle:: ~Circle(){
+Circle:: ~Circle() {
 
 }

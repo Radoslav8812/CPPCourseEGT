@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <vector>
 
@@ -9,41 +8,21 @@
 using namespace std;
 
 void printArea(Shape* shape) {
-	shape->printArea();
+	cout <<"Area is: " << shape->area() << endl;
 }
 int main() {
 
-	vector<Shape*> shapesVect;
+	Shape* circle = new Circle("black", 3.2);
+	Shape* rectangle = new Rectangle("green", 8, 4);
 
-	shapesVect.emplace_back (new Circle("black", 3.2));
-	shapesVect.emplace_back (new Circle("white", 2.5));
-	shapesVect.emplace_back (new Rectangle("green" , 8, 4));
+	cout << "Circle info: " << endl;
+	circle->draw();
+	printArea(circle);
+	cout << endl;
 
-	for (auto& shape : shapesVect) {
-
-		if (dynamic_cast<Circle*>(shape)) {
-
-			cout << "Circle founded!" << endl;
-			printArea(shape);
-			cout << endl;
-			shape->draw();
-			
-		}
-		else if (dynamic_cast<Rectangle*>(shape)) {
-
-			cout << "Rectangle founded!" << endl;
-			printArea(shape);
-			cout << endl;
-			shape->draw();
-			
-		}
-
-		cout << endl;
-	}
-
-	for (int i = 0; i < shapesVect.size(); i++) {
-		delete shapesVect[i];
-	}
+	cout << "Rectangle info: " << endl;
+	rectangle->draw();
+	printArea(rectangle);
 
 	return 0;
 }

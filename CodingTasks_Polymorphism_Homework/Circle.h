@@ -15,6 +15,5 @@ public:
 	~Circle();
 
 	double area() override;
-    void draw() override;
-	void printArea() override;
+	void draw() override;
 };

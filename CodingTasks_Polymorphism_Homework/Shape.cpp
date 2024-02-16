@@ -18,10 +18,6 @@ double Shape::area() {
 	return 0;
 }
 
-void Shape::printArea() {
-	cout << "Area: ";
-} 
-
 Shape:: ~Shape() {
 
 }
