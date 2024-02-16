@@ -6,15 +6,9 @@ using namespace std;
 
 class Rectangle : public Shape {
 
-private:
-	string name;
-
 public:
-	Rectangle(string color, string name);
-	~Rectangle() override;
+	Rectangle(string color);
+	~Rectangle();
 
-	void setName(string name);
-	string getName();
-
-	void draw();
+	void draw() override;
 };

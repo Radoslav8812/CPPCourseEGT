@@ -11,7 +11,7 @@ string Shape::getColor() {
 
 void Shape::draw() {
 
-	cout << "Color is : ";
+	cout << "Color is: ";
 }
 
 Shape:: ~Shape() {

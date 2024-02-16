@@ -12,19 +12,23 @@ int main() {
 
 	vector<Shape*> shapesVect;
 
-	shapesVect.emplace_back (new Circle("black", "c1"));
-	shapesVect.emplace_back (new Circle("white", "c2"));
-	shapesVect.emplace_back (new Rectangle("green", "r1"));
+	shapesVect.emplace_back (new Circle("black"));
+	shapesVect.emplace_back (new Circle("white"));
+	shapesVect.emplace_back (new Rectangle("green"));
 
 	for (auto& shape : shapesVect) {
 
 		if (dynamic_cast<Circle*>(shape)) {
+
 			cout << "Circle founded!" << endl;
 			shape->draw();
+			
 		}
 		else if (dynamic_cast<Rectangle*>(shape)) {
+
 			cout << "Rectangle founded!" << endl;
 			shape->draw();
+			
 		}
 
 		cout << endl;

@@ -7,15 +7,9 @@ using namespace std;
 
 class Circle : public Shape {
 
-private:
-	string name;
-
 public:
-	Circle(string color, string name);
-	~Circle() override;
+	Circle(string color);
+	~Circle();
 
-	void setName(string name);
-	string getName();
-
-    void draw();
+    void draw() override;
 };
