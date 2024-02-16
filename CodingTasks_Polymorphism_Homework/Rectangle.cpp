@@ -6,13 +6,6 @@ Rectangle::Rectangle(string color, double width, double height) : Shape(color), 
 	//setName(name);
 }
 
-//void Rectangle::setName(string name) {
-//	this->name = name;
-//}
-//string Rectangle::getName() {
-//	return this->name;
-//}
-
 void Rectangle::draw() {
 	Shape::draw();
 	cout << this -> color  << endl;
