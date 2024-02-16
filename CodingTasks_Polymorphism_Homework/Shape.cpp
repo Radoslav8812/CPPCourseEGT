@@ -14,6 +14,10 @@ void Shape::draw() {
 	cout << "Color is: ";
 }
 
+double Shape::area() {
+	return 0;
+}
+
 void Shape::printArea() {
 	cout << "Area: ";
 } 

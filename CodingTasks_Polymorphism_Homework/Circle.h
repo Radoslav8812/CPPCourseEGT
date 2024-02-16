@@ -12,7 +12,7 @@ private:
 
 public:
 	Circle(string color, double radius);
-	~Circle() override;
+	~Circle();
 
 	double area() override;
     void draw() override;
