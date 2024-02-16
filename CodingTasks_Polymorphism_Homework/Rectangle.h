@@ -13,7 +13,7 @@ private:
 
 public:
 	Rectangle(string color, double width, double height);
-	~Rectangle() override;
+	~Rectangle();
 
 	void setName(string name);
 	string getName();
