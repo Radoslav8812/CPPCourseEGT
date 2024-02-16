@@ -3,7 +3,7 @@
 
 Rectangle::Rectangle(string color, double width, double height) : Shape(color), width(width), height(height) {
 
-	//setName(name);
+	
 }
 
 void Rectangle::draw() {
