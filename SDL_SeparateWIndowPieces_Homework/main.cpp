@@ -51,7 +51,7 @@ int main(int argc, char* args[]) {
 
 	// image for each quadrant
 	ImageInfo images[4];
-	for (int i = 0; i < 4; ++i) {
+	for (int i = 0; i < 4; i++) {
 
 		if (i == 0) {
 			images[i].texture = IMG_LoadTexture(renderer, "C:/Users/User/Desktop/1.png");
