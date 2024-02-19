@@ -22,7 +22,7 @@ SDLInit::SDLInit()
     int audio_buffers = 4096;
 
     if (Mix_OpenAudio(audio_rate, audio_format, audio_channels, audio_buffers) != 0) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't init audio: %s", Mix_GetError());
+        cout << "Cant't init audio! << endl;
         exit(-1);
     } 
     else {
