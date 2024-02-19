@@ -18,8 +18,6 @@ int main(int argc, char* argv[]) {
 	int choice = 0;
 	while (choice != -1)
 	{
-		choice = 0;
-
 		cout << endl;
 		cout << "Which song to play? (enter -1 to exit)" << endl;
 		cout << "enter 11 to pause/play music. " << endl;
