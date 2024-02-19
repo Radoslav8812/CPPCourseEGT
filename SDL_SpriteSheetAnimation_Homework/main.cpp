@@ -40,8 +40,8 @@ int main(int argc, char* args[]) {
         SDL_RenderClear(render);
 
         // position of the current frame
-        int srcX = (currentFrame % COLUMNS) * SPRITE_SIZE;
-        int srcY = (currentFrame / COLUMNS) * SPRITE_SIZE;
+        int srcX = (currentFrame % COLUMNS) * SPRITE_SIZE; // column index and size of spriteSheet
+        int srcY = (currentFrame / COLUMNS) * SPRITE_SIZE; // row index
 
         // Render the current frame
         SDL_Rect srcRect = { srcX, srcY, SPRITE_SIZE, SPRITE_SIZE };
