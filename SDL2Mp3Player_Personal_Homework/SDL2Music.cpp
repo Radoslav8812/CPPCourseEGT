@@ -15,7 +15,7 @@ void SDL2Music::addMusicTrack(const char* path)
         musicVect.push_back(tmp_music);
     }
     else {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't load audio: %s", Mix_GetError());
+        cout << "Couldn't load audio! << endl;
     }
 }
 
