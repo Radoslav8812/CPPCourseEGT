@@ -25,7 +25,7 @@ SnakeGame::SnakeGame() {
 	startedMoving = false;
 	isGameRunning = false;
 	inInfoMode = false;
-																											 // +400 space for buttons
+																											
 	window = SDL_CreateWindow("Snake Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, COLS * TILE_SIZE + 400, ROWS * TILE_SIZE, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
@@ -342,7 +342,6 @@ SnakeGame::~SnakeGame() {
 
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
-	SDL_DestroyTexture(infoTexture); // Add this line
+	SDL_DestroyTexture(infoTexture); 
 	SDL_Quit();
 }
-// 1)
