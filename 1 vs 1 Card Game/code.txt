@@ -1,0 +1,281 @@
+#pragma once
+
+#include <SDL.h>
+#include <SDL_image.h>
+
+#include <iostream>
+#include <vector>
+
+class Game {
+public:
+    Game(SDL_Renderer* renderer);
+    ~Game();
+
+    void run();
+
+private:
+    SDL_Renderer* renderer;
+    SDL_Texture* tableTexture;
+    SDL_Texture* cardCoverTexture;
+    SDL_Texture* cardBackTexture;
+
+    SDL_Rect tableRect;
+    SDL_Rect card1Rect;
+    SDL_Rect card2Rect;
+
+    std::vector<int> blackDeck;
+    std::vector<int> redDeck;
+    int blackScore;
+    int redScore;
+
+    std::vector<SDL_Texture*> blackDeckTextures;
+    std::vector<SDL_Texture*> redDeckTextures;
+    std::vector<int> blackThrownCards;
+    std::vector<int> redThrownCards;
+
+    void loadTextures();
+    void cleanupTextures();
+    void render();
+    void handleEvents(SDL_Event& e);
+    void shuffleDecks();
+    int drawCard(std::vector<int>& deck);
+    int compareCards(int card1, int card2);
+    void playRound();
+    void determineWinner();
+};
+
+
+
+
+#pragma once
+#include "Game.h"
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+Game::Game(SDL_Renderer* renderer) : renderer(renderer), tableTexture(nullptr), cardCoverTexture(nullptr), cardBackTexture(nullptr),
+blackScore(0), redScore(0) {
+    tableRect = { 0, 0, 1280, 720 };
+    card1Rect = { 20, 20, 100, 150 };
+    card2Rect = { 1160, 570, 100, 150 };
+
+    loadTextures();
+    shuffleDecks();
+}
+
+void Game::loadTextures() {
+    tableTexture = IMG_LoadTexture(renderer, "C:/Users/User/Desktop/CasinoTable.jpg");
+    if (tableTexture == nullptr) {
+        std::cerr << "Failed to load table texture: " << IMG_GetError() << std::endl;
+        std::exit(1);
+    }
+
+  /*  cardCoverTexture = IMG_LoadTexture(renderer, "C:/Users/User/Desktop/card_cover.png");
+    if (cardCoverTexture == nullptr) {
+        std::cerr << "Failed to load card cover texture: " << IMG_GetError() << std::endl;
+        std::exit(1);
+    }
+
+    cardBackTexture = IMG_LoadTexture(renderer, "C:/Users/User/Desktop/card_back.png");
+    if (cardBackTexture == nullptr) {
+        std::cerr << "Failed to load card back texture: " << IMG_GetError() << std::endl;
+        std::exit(1);
+    }*/
+
+    // Load card textures for black deck (2 to A)
+    for (int i = 2; i <= 14; ++i) {
+        std::string imagePath = "C:/Users/User/Desktop/blackCards/" + to_string(i) + ".png";
+        SDL_Texture* cardTexture = IMG_LoadTexture(renderer, imagePath.c_str());
+        if (cardTexture == nullptr) {
+            std::cerr << "Failed to load black card texture: " << IMG_GetError() << std::endl;
+            std::exit(1);
+        }
+        blackDeckTextures.push_back(cardTexture);
+    }
+
+    // Load card textures for red deck (2 to A)
+    for (int i = 2; i <= 14; ++i) {
+        std::string imagePath = "C:/Users/User/Desktop/redCards/" + to_string(i) + ".png";
+        SDL_Texture* cardTexture = IMG_LoadTexture(renderer, imagePath.c_str());
+        if (cardTexture == nullptr) {
+            std::cerr << "Failed to load red card texture: " << IMG_GetError() << std::endl;
+            std::exit(1);
+        }
+        redDeckTextures.push_back(cardTexture);
+    }
+}
+    
+
+void Game::cleanupTextures() {
+
+    SDL_DestroyTexture(tableTexture);
+    SDL_DestroyTexture(cardCoverTexture);
+    SDL_DestroyTexture(cardBackTexture);
+
+    for (SDL_Texture* texture : blackDeckTextures) {
+        SDL_DestroyTexture(texture);
+    }
+
+    for (SDL_Texture* texture : redDeckTextures) {
+        SDL_DestroyTexture(texture);
+    }
+
+    SDL_DestroyRenderer(renderer);
+    //SDL_DestroyWindow(window);
+
+    IMG_Quit();
+    SDL_Quit();
+}
+
+void Game::render() {
+
+    SDL_RenderClear(renderer);
+
+    SDL_RenderCopy(renderer, tableTexture, nullptr, &tableRect);
+
+    if (!blackDeck.empty()) {
+        SDL_RenderCopy(renderer, cardCoverTexture, nullptr, &card1Rect);
+    }
+    else if (!redDeck.empty()) {
+        SDL_RenderCopy(renderer, cardCoverTexture, nullptr, &card2Rect);
+    }
+
+    if (!blackDeck.empty() || !redDeck.empty()) {
+        SDL_RenderCopy(renderer, cardBackTexture, nullptr, &card2Rect);
+        SDL_RenderCopy(renderer, cardBackTexture, nullptr, &card1Rect);
+    }
+
+    SDL_RenderPresent(renderer);
+}
+
+void Game::handleEvents(SDL_Event& e) {
+
+    if (e.type == SDL_QUIT) {
+        cleanupTextures();
+        std::exit(0);
+    }
+    else if (e.type == SDL_MOUSEBUTTONDOWN) {
+        if (!blackDeck.empty() && card1Rect.x == 20 && card1Rect.y == 20) {
+            // Draw a card from the black deck
+            int drawnCard = drawCard(blackDeck);
+            std::cout << "Black Deck throws: " << drawnCard << std::endl;
+            blackThrownCards.push_back(drawnCard);
+            card1Rect.x = (1280 - card1Rect.w) / 2;
+            card1Rect.y = (720 - card1Rect.h) / 2;
+        }
+        else if (!redDeck.empty() && card2Rect.x == 1160 && card2Rect.y == 570) {
+            // Draw a card from the red deck
+            int drawnCard = drawCard(redDeck);
+            std::cout << "Red Deck throws: " << drawnCard << std::endl;
+            redThrownCards.push_back(drawnCard);
+            card2Rect.x = (1280 - card2Rect.w) / 2;
+            card2Rect.y = (720 - card2Rect.h) / 2;
+        }
+
+        // If both decks have thrown a card, play the round
+        if (blackThrownCards.size() > 0 && redThrownCards.size() > 0) {
+            playRound();
+        }
+    }
+}
+
+void Game::shuffleDecks() {
+    // Shuffle decks
+    std::random_shuffle(blackDeckTextures.begin(), blackDeckTextures.end());
+    std::random_shuffle(redDeckTextures.begin(), redDeckTextures.end());
+}
+
+int Game::drawCard(std::vector<int>& deck) {
+    if (!deck.empty()) {
+        int drawnCard = deck.back();
+        deck.pop_back();
+        return drawnCard;
+    }
+    else {
+        return -1; // No more cards in the deck
+    }
+}
+
+int Game::compareCards(int card1, int card2) {
+    // Simple comparison logic (modify as needed)
+    return card1 - card2;
+}
+
+void Game::playRound() {
+    std::cout << "Cards in the middle: " << blackThrownCards.back() << " vs " << redThrownCards.back() << std::endl;
+
+    int result = compareCards(blackThrownCards.back(), redThrownCards.back());
+    if (result > 0) {
+        blackScore++;
+        std::cout << "Black Deck wins the round!" << std::endl;
+    }
+    else if (result < 0) {
+        redScore++;
+        std::cout << "Red Deck wins the round!" << std::endl;
+    }
+    else {
+        std::cout << "It's a tie!" << std::endl;
+    }
+
+    // Clear thrown cards
+    blackThrownCards.clear();
+    redThrownCards.clear();
+}
+
+void Game::determineWinner() {
+    if (blackScore > redScore) {
+        std::cout << "Black Deck is the winner!" << std::endl;
+    }
+    else if (blackScore < redScore) {
+        std::cout << "Red Deck is the winner!" << std::endl;
+    }
+    else {
+        std::cout << "It's a tie! No winner." << std::endl;
+    }
+}
+
+void Game::run() {
+    SDL_Event e;
+    bool running = true;
+
+    while (running) {
+        while (SDL_PollEvent(&e)) {
+            handleEvents(e);
+        }
+
+        render();
+        SDL_Delay(10);
+    }
+}
+
+Game::~Game() {
+
+}
+
+
+
+
+
+
+//main.cpp
+#include "Game.h"
+#include <SDL.h>
+#include <SDL_image.h>
+#include <iostream>
+
+int main(int argc, char* argv[]) {
+
+    SDL_Init(SDL_INIT_EVERYTHING);
+    SDL_Window* window = SDL_CreateWindow("Card Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280, 720, SDL_WINDOW_SHOWN);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+    Game game(renderer);
+
+    game.run();
+
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+
+    return 0;
+}

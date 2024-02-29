@@ -1,0 +1,2 @@
+C:\Users\User\Desktop\VS CPP Projects\Employees\x64\Debug\Employees.exe
+C:\Users\User\Desktop\Employees\x64\Debug\Employees.exe

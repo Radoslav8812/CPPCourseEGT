@@ -1,0 +1,33 @@
+std::vector<std::string> blackCardVect = {
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/black2.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/black3.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/black4.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/black5.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/black6.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/black7.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/black8.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/black9.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/black10.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/blackJ.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/blackQ.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/blackK.png",
+    "C:/Users/User/Desktop/1 vs 1 Card Game/blackCards/blackA.png"
+    // ... add all your image paths
+};
+
+std::vector<std::string> redCardVect = {
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/red2.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/red3.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/red4.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/red5.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/red6.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/red7.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/red8.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/red9.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/red10.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/redJ.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/redQ.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/redK.png",
+   "C:/Users/User/Desktop/1 vs 1 Card Game/redCards/redA.png"
+   // ... add all your image paths
+};
